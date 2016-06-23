@@ -133,7 +133,7 @@ $( document ).ready(function() {
     $('body').click(function(e) {
       $('.page__nav__reveal__div').removeClass('hide')
       $('aside').removeClass('show');
-      $('body').css('cursor','pointer');
+      $('body').css('cursor','auto');
     });
 
   });
@@ -152,7 +152,7 @@ $( document ).ready(function() {
           var galleryItems = response;
           $('.home__section__mainContent').html(galleryTemplate(galleryItems));
           console.log(galleryItems);
-          openShades(function(status) {
+          endShades(function(status) {
             console.log(status + ' open gal');
           $('.home__columnShades__div').css('z-index','0');
           });
@@ -180,7 +180,7 @@ $( document ).ready(function() {
       closeShades(function(status) {
         console.log(status + ' close blog');
         $('.home__section__mainContent').html(blogTemplate());
-        openShades(function(status) {
+        endShades(function(status) {
           console.log(status + ' open blog');
           $('.home__columnShades__div').css('z-index','0');
         });
@@ -196,7 +196,7 @@ $( document ).ready(function() {
       closeShades(function(status) {
         console.log(status + ' close about');
         $('.home__section__mainContent').html(aboutTemplate());
-        openShades(function(status) {
+        endShades(function(status) {
           console.log(status + ' open about');
           $('.home__columnShades__div').css('z-index','0');
         });
@@ -212,7 +212,7 @@ $( document ).ready(function() {
       closeShades(function(status) {
         console.log(status + ' close contact');
         $('.home__section__mainContent').html(contactTemplate());
-        openShades(function(status) {
+        endShades(function(status) {
           console.log(status + ' open contact');
           $('.home__columnShades__div').css('z-index','0');
         });
@@ -236,21 +236,36 @@ $( document ).ready(function() {
         $('.contact__content__form__inner__div').empty().html('<p>There was a problem sending your information. Please email me at <a href="mailto:leogarrison1@gmail.com">leogarrison1@gmail.com</a> or <a href="/contact">try again</a>.</p>');
       }
     });
-
   });
+
+  $(document).on('click', '.modPsy__credit__symbol', function(e) {
+    e.preventDefault();
+    $('.modPsy__credit__symbol').fadeOut();
+    $('.modPsy__credit__link').fadeIn();
+    $(window).scroll(function() {
+      $('.modPsy__credit__symbol').fadeIn();
+      $('.modPsy__credit__link').fadeOut();
+    });
+  });
+
 
 });
 
 $( window ).resize(function() {
+  console.log('resize');
+//   var viewWidth = $( window ).width(),
+//   viewWidthQuarter = $( window ).width()/4,
+//   viewHeight = $( window ).height(),
+//   bgSize = 'auto, ' + viewHeight + 'px';
+//   if (viewWidth < viewHeight) {
+//     bgSize = 'cover';
+//   } else {
+//     bgSize = viewWidth + 'px, auto';
+//   }
+//   $('body').css({
+//     'background-size' : bgSize
+//   });
   positionShades(function(status) {});
-});
-
-$(window).scroll(function() {
-  if($(window).scrollTop() + window.innerHeight == $(document).height()) {
-    $('body').css('height','0');
-  } else {
-    $('.modPsy__credit').css('bottom','-150px');
-  }
 });
 
 function endShades() {

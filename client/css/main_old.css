@@ -5797,7 +5797,7 @@ header {
   @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
     .home__background__div__one, .home__background__div__two, .home__background__div__three, .home__background__div__four {
       background-image: url("../img/background__one@2x.jpg");
-      background-size: cover; } }
+      background-size: 100% 100%; } }
 
 .home__background__div__two {
   background-position: 25% 0;
@@ -5816,7 +5816,7 @@ header {
   @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
     .two {
       background-image: url("../img/background__two@2x.jpg");
-      background-size: cover; } }
+      background-size: 100% 100%; } }
 
 .home__section__header, .portfolio__section__header {
   border-radius: 5px;
@@ -5891,7 +5891,7 @@ nav {
   @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
     .page__nav__reveal__div {
       background-image: url("../img/modpsy_burger-white@2x.png");
-      background-size: cover; } }
+      background-size: 80px 80px; } }
 
 .page__artcile {
   display: none; }

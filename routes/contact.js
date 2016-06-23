@@ -56,7 +56,7 @@ router.post('/', function(req, res, next) {
     console.log(app.get('env'));
     mailOptions = {
       from: 'modpsy.mailer@gmail.com', // sender address
-      to: 'leogarrison1@gmail.com', // list of receivers
+      to: '629lart@gmail.com', // list of receivers
       subject: 'LG Printmaking Web Enquiry', // Subject line
       text: 'Name: ' + req.body.name
        + '\nEmail: ' + req.body.email

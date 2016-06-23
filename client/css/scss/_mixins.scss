@@ -15,6 +15,6 @@
          all and (min--moz-device-pixel-ratio: 1.5),
          all and (min-device-pixel-ratio: 1.5) {
            background-image: url("#{$at2x_path}");
-           background-size: cover;
+           background-size: $w $h;
   }
 }
