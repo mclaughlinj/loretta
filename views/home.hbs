@@ -1,0 +1,63 @@
+<div class="home__header__div">
+
+  <header>
+    {{>pageHeader}}
+  </header>
+  <aside>
+    <nav class="home__aside__nav">
+    {{>pageNav}}
+    </nav>
+  </aside>
+  <p class="home__header__div__tagline">Printmaking</p>
+
+</div>
+
+<div class="home__columnShades__div">
+  <div class="home__columnShades__div__column">
+    <div class="home__columnShades__div__columnOne"></div>
+  </div>
+  <div class="home__columnShades__div__column">
+    <div class="home__columnShades__div__columnTwo"></div>
+  </div>
+  <div class="home__columnShades__div__column">
+    <div class="home__columnShades__div__columnThree"></div>
+  </div>
+  <div class="home__columnShades__div__column">
+    <div class="home__columnShades__div__columnFour"></div>
+  </div>
+</div>
+
+
+<div class="home__mainContent__div">
+
+  <section class="home__section__mainContent clearfix">
+
+  {{#if gallery}}
+  {{>galleryContent}}
+  {{else}}
+  {{#if blog}}
+  {{>blogContent}}
+  {{else}}
+  {{#if contact}}
+  {{>contactContent}}
+  {{else}}
+  {{>aboutContent}}
+  {{/if}}
+  {{/if}}
+  {{/if}}
+
+
+  </section>
+
+  <footer>
+    {{>pageFooter}}
+  </footer>
+
+  </div>
+  <div class="home__modal__div">
+    <div class="home__modal__div__close">&times;</div>
+    <div class="home__modal__div__content">
+      <p>Click or tap the screen to enter</p>
+    </div>
+  </div>
+

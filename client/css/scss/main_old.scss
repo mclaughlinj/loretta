@@ -1,0 +1,344 @@
+@import 'globals';
+@import 'bootstrap/bootstrap';
+@import 'mixins';
+
+$font-stack: 100% "Trebuchet MS", Helvetica, sans-serif;
+$desktop-width: 1024px - 130px;
+$portfolio-margin: ($desktop-width - 480px) / 2;
+
+html {
+  font: $font-stack;
+}
+
+header, nav, footer, article {
+  display: block;
+}
+
+body {
+  background-color: #000000;
+  color: #fff;
+  font-size: 20px;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #fff;
+}
+
+a:active {
+  text-shadow: 1px 1px 4px #b9dcdd;
+}
+
+header {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.page__header__h1 {
+  display: none;
+  text-align: center;
+}
+
+.home__background__div__one {
+  @include at2x('../img/background__one', jpg);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 50% 50%;
+  float: left;
+  width: 25%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.home__background__div__two {
+  @extend .home__background__div__one;
+  background-position: 25% 0;
+  left: 25%;
+}
+
+.home__background__div__three {
+  @extend .home__background__div__one;
+  background-position: 50% 0;
+  left: 50%;
+}
+
+.home__background__div__four {
+  @extend .home__background__div__one;
+  background-position: 100% 0;
+  right: 0;
+}
+
+.two {
+  @include at2x('../img/background__two', jpg);
+}
+
+.home__section__header, .portfolio__section__header {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: black;
+  font-size: 17px;
+  font-weight: bold;
+  font-size: larger;
+  margin: 0 auto;
+  width: 466px;
+  text-align: right;
+}
+
+.home__section__mainContent, .portfolio__section__mainContent {
+  margin: 0 auto;
+  width: 100%;
+  display: none;
+  position: relative;
+}
+
+.portfolio__section__img {
+  display: block;
+  width: 0px;
+  margin: 0 auto;
+  transition: width 2s, height 2s;
+  position: relative;
+  top: 0;
+}
+
+.imgOne {
+  z-index: 1000;
+}
+
+.imgTwo {
+ position: absolute;
+ top: 100px;
+}
+
+.imgThree {
+  @extend .imgTwo;
+}
+
+footer {
+  clear: both;
+  margin-top: 20px;
+}
+
+.page__footer__byline {
+  float: left;
+  font-weight: bold;
+}
+
+.page__footer__a {
+  font-weight: normal;
+}
+
+nav {
+  color: #000000;
+  display: none;
+  height: 150px;
+  width: 100%;
+  left: 0;
+  position: fixed;
+  top: -150px;
+  transition: background 1s, top 0.5s;
+}
+
+.page__nav__ul {
+  padding-left: 0px;
+  text-align: center;
+}
+
+.page__nav__open {
+  background: rgb(255, 255, 255);
+  /* RGBa with 0.6 opacity */
+  background: rgba(255, 255, 255, 0.9);
+  top: 0;
+}
+
+.page__nav__reveal__div {
+  @include at2x('../img/modpsy_burger-white', png, 80px, 80px);
+  position: absolute;
+  top: 155px;
+  right: 10px;
+  background-color: transparent;
+  width: 80px;
+  height: 80px;
+}
+
+.page__artcile {
+    display: none;
+}
+
+details {
+  display: block;
+  background: #ececec;
+  padding: 5px;
+  margin: 5px 0px 5px 5px;
+  color: #000;
+  border-radius: 6px;
+  font-size: smaller;
+}
+
+article footer {
+  padding: 6px 0px 0px 0px;
+  font-weight: bold;
+}
+
+.tapable {
+  cursor: pointer;
+}
+
+@media only screen and (min-device-width: 481px) {
+  body {
+    font-size: 18px;
+    background-color: #000000;
+  }
+
+  header, nav, footer, article {
+    display: block;
+  }
+
+  header {
+    font-weight: bold;
+    font-size: larger;
+  }
+
+  article header {
+    font-weight: bold;
+    font-size: larger;
+    margin: 0 auto;
+    width: 466px;
+    text-align: right;
+  }
+
+  nav {
+    color: #000000;
+    display: none;
+    height: 100px;
+    width: 100%;
+    left: 0;
+    position: fixed;
+    top: -100px;
+    transition: background 1s, top 0.5s;
+  }
+
+  .page__nav__open {
+    background: rgb(255, 255, 255);
+    /* RGBa with 0.6 opacity */
+    background: rgba(255, 255, 255, 0.9);
+    top: 0;
+  }
+
+  .page__nav__reveal__div {
+    position: absolute;
+    top: 105px;
+    right: 10px;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+  }
+
+  .display {
+    left: 0px;
+  }
+
+  article {
+    width: 100%;
+    text-align: left;
+    padding-right: 250px;
+  }
+
+  nav ul li {
+    background-color: #000000;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    margin: 0px 0px 6px 10px;
+    text-align: left;
+    padding: 5px;
+    font-size: 26px;
+    line-height: 1.0em;
+    width: auto;
+  }
+
+  nav ul li a {
+    color: #FFFFFF;
+  }
+
+  footer {
+    display: none;
+    text-align: right;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  body {
+    font-size: 16px;
+  }
+
+    nav {
+    height: 100%;
+    left: -170px;
+    top: 0;
+    width: 210px;
+    transition: background 1s, left 1s;
+  }
+
+  .page__nav__open {
+    background: rgb(255, 255, 255);
+    /* RGBa with 0.6 opacity */
+    background: rgba(255, 255, 255, 0.9);
+    left: 0;
+  }
+
+  .page__nav__reveal__div {
+    top: 10px;
+    left: 180px;
+  }
+
+  nav ul {
+    width: 170px;
+  }
+
+  nav ul li {
+    display: block;
+    font-size: 14px;
+  }
+
+  .home__section__mainContent, .portfolio__section__mainContent {
+    margin: 0 auto;
+    width: $desktop-width;
+    display: none;
+    position: relative;
+  }
+
+  .portfolio__section__img {
+    display: block;
+    transition: width 2s, height 2s, top 4s;
+  }
+
+  .imgOne {
+    width: 480px;
+    margin: 0 auto;
+    z-index: 1000;
+    position: relative;
+    top: 0;
+  }
+
+  .imgTwo {
+    margin: 0 $portfolio-margin - 100px;
+    position: absolute;
+    top: 70px;
+    opacity: 0.6;
+    width: 450px;
+  }
+
+  .imgThree {
+    margin: 0 $portfolio-margin + 130px;
+  }
+}

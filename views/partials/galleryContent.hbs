@@ -1,0 +1,12 @@
+<h2>Gallery</h2>
+
+<div class="gallery__images__div">
+  {{#each galleryItems}}
+  {{#if current}}
+  <div class="gallery__image__div">
+  <a href="/img/gallery/{{this.fileName}}" class="gallery__image__a"><img src="/img/gallery/{{this.fileName}}" alt="{{this.description}}" title="{{title}}" width="100%">
+  <h4>{{title}}</h4></a>
+  </div>
+  {{/if}}
+  {{/each}}
+</div>

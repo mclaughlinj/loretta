@@ -1,0 +1,418 @@
+@import 'globals';
+@import 'mixins';
+
+$font-stack: 100% "Trebuchet MS", Helvetica, sans-serif;
+$desktop-width: 1024px - 130px;
+$portfolio-margin: ($desktop-width - 480px) / 2;
+$link-color: #a27e00;
+$one-quarter: 25%;
+
+body {
+  font-family: Antic, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  @include at2x('../img/background1', jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center left;
+  background-color: #000;
+  background-attachment: fixed;
+  margin: 0;
+  font-size: 16px;
+  cursor: pointer;
+  overflow-wrap: break-word;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.noScroll {
+  height: 100%;
+  overflow: auto;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: $link-color;
+}
+
+input, textarea {
+  border: 1px solid $link-color;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.home__modal__div {
+  z-index: 1999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.0em;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  padding: 10px;
+  border-radius: 2px;
+  overflow: auto;
+  text-align: center;
+  &.gallery {
+    width: 100%;
+    height: 100%;
+  }
+  .home__modal__div__close {
+    display: none;
+    font-size: 2.0em;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 0px;
+    line-height: 0;
+    height: 20px;
+    width: 40px;
+  }
+  .home__modal__div__content {
+    img {
+      display: block;
+      margin: 0 auto;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    h5 {
+      text-align: center;
+      margin: 0;
+    }
+  }
+}
+
+.home__header__div {
+  display: none;
+  background: #000;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  font-size: 1.5em;
+  .home__header__a {
+    position: relative;
+    top: -100px;
+    display: block;
+    height: 160px;
+    object {
+      height: 51px;
+      width: 60px;
+      padding: 5px;
+      position: absolute;
+      top: 100px;
+      pointer-events: none;
+      cursor: pointer;
+    }
+  }
+  aside, header, p {
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+    h1 {
+      margin: 0;
+      padding-right: 10px;
+    }
+    .home__aside__nav {
+      height: 100%;
+    }
+    .home__aside__nav__ul {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      li {
+        box-sizing: border-box;
+        border-right: 3px solid #ececec;
+        border-right: 3px solid rgba(255,255,255,0.1);
+        padding: 20% 10px 0 5px;
+        vertical-align: middle;
+        list-style-type: none;
+        text-align: right;
+      }
+    }
+  }
+  aside {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #000;
+    background: rgba(0,0,0,0.8);
+    width: 0;
+    transition: width 0.5s;
+    transition-delay: 0.5s;
+    transform-origin: left;
+    &.show {
+      width: 35%;
+    }
+  }
+  header {
+    display: inline-block;
+    border-right: 3px solid #ececec;
+    border-right: 3px solid rgba(255,255,255,0.1);
+    padding: 0 5px;
+  }
+  p {
+    float: none;
+    padding-right: 70px;
+    display: inline-block;
+  }
+  .page__nav__reveal__div {
+    @include at2x('../img/modpsy_burger-white', png, 60px, 60px);
+    position: absolute;
+    top: 0;
+    right: 5px;
+    background-color: transparent;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: right 0.5s;
+      transition-delay: 0.5s;
+    &.hide {
+      right: -60px;
+      transition-delay: 0s;
+    }
+  }
+
+}
+
+.home__columnShades__div {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1599;
+}
+
+.home__columnShades__div__column {
+  width: 25%;
+  height: 100%;
+  float: left;
+}
+
+.home__columnShades__div__columnOne {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 26%;
+  background-color: #000;
+  transform-origin: left;
+  transition: transform 0.5s, left 0.5s;
+  transition-delay: 0.5s;
+  @include at2x('../img/background1', jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center left;
+  overflow: hidden;
+}
+
+.home__columnShades__div__columnTwo {
+  @extend .home__columnShades__div__columnOne;
+  left: 25%;
+}
+
+.home__columnShades__div__columnThree {
+  @extend .home__columnShades__div__columnOne;
+  left: 50%;
+}
+
+.home__columnShades__div__columnFour {
+  @extend .home__columnShades__div__columnOne;
+  left: 75%;
+}
+
+.home__columnShades__open {
+  transform: scaleX(0);
+}
+
+.home__columnShades__closed {
+  transform: scaleX(1);
+}
+
+.home__mainContent__div {
+  margin: 80px 5%;
+  position: relative;
+  z-index: 799;
+  display: none;
+}
+
+.home__section__mainContent {
+  background: #fff;
+  background: rgba(255,255,255,1);
+  padding: 10px 10px 60px 10px;
+  border-radius: 2px;
+}
+
+.home__section__about__img {
+  height: 35%;
+  width: 35%;
+  float: right;
+  padding: 10px;
+}
+
+.gallery__images__div {
+  text-align: center;
+}
+
+.gallery__image__div {
+  display: inline-block;
+  width: 21vw;
+  height: 21vw;
+  margin-right: -5px;
+  vertical-align: top;
+  overflow: hidden;
+  & h4 {
+    margin: 0;
+  }
+  & img {
+    height: auto;
+    width: 150%;
+    margin-left: -50%;
+  }
+}
+
+.blog__aside {
+  position: fixed;
+  right: 0;
+  max-width: 20%;
+  margin-right: 5%;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.blog__article {
+  width: 75%;
+  padding-right: 10px;
+}
+
+.contact__content__form__required {
+  display: inline-block;
+  background-color: $link-color;
+  border-radius: 5px;
+  height: auto;
+  font-size: 0.4em;
+  line-height: 0.4em;
+  padding: 2px;
+  vertical-align: top;
+  color: #fff;
+  margin-top: 0.4em;
+}
+
+.contact__content__form__submit {
+  background-color: $link-color;
+  font-size: 1.0em;
+  color: #fff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  padding: 5px;
+  border: 0;
+  border-radius: 2px;
+
+}
+
+.modPsy__credit {
+  position: fixed;
+  bottom: -150px;
+  right: 0;
+  background-color: #000;
+  width: 100%;
+  transform-origin: bottom;
+  transition: transform 0.5s, bottom 0.1s;
+  .modPsy__credit__image {
+    padding-left: 5px;
+    width: 10%;
+    height: 10%;
+    vertical-align: middle;
+  }
+
+  .modPsy__credit__link {
+    margin: 0 auto;
+    text-align: right;
+    float: right;
+    padding: 5px;
+    color: #fff;
+    font-size: 0.6em;
+    text-shadow: 0 0 1px #000;
+  }
+
+  .modPsy__credit__link span {
+    display: block;
+  }
+
+  .modPsy__credit__link a {
+    color: $link-color;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .blog__image__img {
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    display: block;
+  }
+  .home__mainContent__div {
+    margin: 80px 10%;
+  }
+  .gallery__image__div {
+    width: 19vw;
+    height: 19vw;
+  }
+  .home__header__div {
+    aside {
+      position: static;
+      background: transparent;
+      width: auto;
+      display: inline-block;
+      &.show {
+        width: auto;
+      }
+      .home__aside__nav {
+        display: block;
+      }
+      .home__aside__nav__ul {
+        li {
+          display: inline-block;
+          width: auto;
+          height: 100%;
+          padding-top: 7%;
+          text-align: left;
+        }
+      }
+    }
+    p {
+      float: right;
+      padding-right: 10px;
+    }
+    p:after {
+     content: " in London"
+    }
+    .page__nav__reveal__div {
+      display: none;
+    }
+  }
+  .blog__aside {
+    margin-right: 10%;
+  }
+}
