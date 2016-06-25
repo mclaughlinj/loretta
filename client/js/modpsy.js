@@ -17,7 +17,6 @@ $( document ).ready(function() {
 
 
     //splash carousel
-    console.log(pathName);
       var nIntervId;
       var splashEnd = false;
       var shadeStart = false;
@@ -41,7 +40,6 @@ $( document ).ready(function() {
             	  galArray.push(twoTimes);
             	}
             }
-            console.log(galArray);
             galArray.sort(
               function () { if (Math.random()<.5) return -1; else return 1; }
             );
@@ -66,10 +64,8 @@ $( document ).ready(function() {
             if (!splashEnd) {
               nIntervId = setInterval(function() {
               shadeStart = true;
-              console.log('interval ' + i);
               if (!splashEnd) {
                 changeBg(galArray[j], function(status){
-                    console.log(status + ' ' + j);
                     positionShades(function(status) {
                       if (!splashEnd) {
                         openShades(function(status) {
@@ -151,9 +147,7 @@ $( document ).ready(function() {
         post('/gallery', requestData, function(response){
           var galleryItems = response;
           $('.home__section__mainContent').html(galleryTemplate(galleryItems));
-          console.log(galleryItems);
           endShades(function(status) {
-            console.log(status + ' open gal');
           $('.home__columnShades__div').css('z-index','0');
           });
         });
@@ -166,22 +160,17 @@ $( document ).ready(function() {
     var imgUrl = $(this).prop('href'),
     imgTitle = $(this).children('img').prop('title'),
     imgDesc = $(this).children('img').prop('alt');
-    console.log('clicked gallery image');
     showGalleryImg(imgUrl, imgTitle, imgDesc, function(status) {
-      console.log(status);
     })
   });
 
   $(document).on('click', '.home__aside__nav__li__blog__a', function(e) {
     e.preventDefault();
-    console.log('clicked');
 
     positionShades(function(status) {
       closeShades(function(status) {
-        console.log(status + ' close blog');
         $('.home__section__mainContent').html(blogTemplate());
         endShades(function(status) {
-          console.log(status + ' open blog');
           $('.home__columnShades__div').css('z-index','0');
         });
       });
@@ -190,14 +179,11 @@ $( document ).ready(function() {
 
   $(document).on('click', '.home__aside__nav__li__about__a', function(e) {
     e.preventDefault();
-    console.log('clicked');
 
     positionShades(function(status) {
       closeShades(function(status) {
-        console.log(status + ' close about');
         $('.home__section__mainContent').html(aboutTemplate());
         endShades(function(status) {
-          console.log(status + ' open about');
           $('.home__columnShades__div').css('z-index','0');
         });
       });
@@ -206,14 +192,11 @@ $( document ).ready(function() {
 
   $(document).on('click', '.home__aside__nav__li__contact__a', function(e) {
     e.preventDefault();
-    console.log('clicked');
 
     positionShades(function(status) {
       closeShades(function(status) {
-        console.log(status + ' close contact');
         $('.home__section__mainContent').html(contactTemplate());
         endShades(function(status) {
-          console.log(status + ' open contact');
           $('.home__columnShades__div').css('z-index','0');
         });
       });
@@ -222,14 +205,12 @@ $( document ).ready(function() {
 
   $(document).on('click', '.contact__content__form__submit', function(e) {
     e.preventDefault();
-    console.log('clicked');
     var emailOptions = {
       email: $('input[name="email"]').val(),
       name: $('input[name="name"]').val(),
       special: $('textarea[name="special"]').val()
     };
     post('/contact', emailOptions, function(response){
-      console.log(response);
       if(response.success) {
         $('.contact__content__form__inner__div').empty().html('<p>Thank you for your enquiry.  I\'ll be in touch shortly.</p><p><a href="/contact">Send me another message</a>.</p>');
       } else {
@@ -252,7 +233,6 @@ $( document ).ready(function() {
 });
 
 $( window ).resize(function() {
-//   console.log('resize');
 //   var viewWidth = $( window ).width(),
 //   viewWidthQuarter = $( window ).width()/4,
 //   viewHeight = $( window ).height(),
@@ -265,7 +245,6 @@ $( window ).resize(function() {
 //   $('body').css({
 //     'background-size' : bgSize
 //   });
-//   console.log(bgSize);
   positionShades(function(status) {});
 });
 
@@ -376,7 +355,6 @@ function openShades(callBack) {
   function(e) {
     if (transitionEnded == false) {
       transitionEnded = true;
-      console.log('trans end');
       callBack('opened');
     }
   });

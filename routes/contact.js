@@ -20,28 +20,21 @@ var mailUser = 'modpsy.mailer@gmail.com';
 var mailPass = '';
 
 var findMailUsers = function(db, callback) {
-  console.log(db);
-  var cursor = db.collection('mailUsers').find( { "user": mailUser } );
+    var cursor = db.collection('mailUsers').find( { "user": mailUser } );
   cursor.each(function(err, doc) {
     assert.equal(err, null);
     if (doc != null) {
-      console.log('found pw');
-      mailPass = doc.password;
-      console.log(mailPass);
-    } else {
-      console.log('failed');
-      callback();
+            mailPass = doc.password;
+          } else {
+            callback();
     }
   });
 };
 
 router.post('/', function(req, res, next) {
-  console.log('post');
-  var db = req.app.locals.db;
+    var db = req.app.locals.db;
   findMailUsers(db, function() {
 
-    console.log(mailUser);
-    console.log(mailPass);
 
     // create reusable transporter object using the default SMTP transport
     var transporter = nodemailer.createTransport(sendmailTransport({
@@ -60,8 +53,7 @@ router.post('/', function(req, res, next) {
 
     // setup e-mail data with unicode symbols
     var mailOptions = {};
-    console.log(app.get('env'));
-    mailOptions = {
+        mailOptions = {
       from: 'modpsy.mailer@gmail.com', // sender address
       to: '629lart@gmail.com, admin@modpsy.co.uk', // list of receivers
       subject: 'LG Printmaking Web Enquiry', // Subject line
@@ -79,14 +71,12 @@ router.post('/', function(req, res, next) {
         //Email not sent
         if (error) {
             var success = {success: false};
-            console.log(error);
-            res.json(success);
+                        res.json(success);
         }
         //Yay!! Email sent
         else {
             var success = {success: true};
-            console.log(response);
-            res.json(success);
+                        res.json(success);
         }
     });
 
