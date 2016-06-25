@@ -25,6 +25,7 @@ var findMailUsers = function(db, callback) {
     assert.equal(err, null);
     if (doc != null) {
        mailPass = doc.password;
+       console.log(mailPass);
     } else {
        callback();
     }
