@@ -252,7 +252,7 @@ $( document ).ready(function() {
 });
 
 $( window ).resize(function() {
-  console.log('resize');
+//   console.log('resize');
 //   var viewWidth = $( window ).width(),
 //   viewWidthQuarter = $( window ).width()/4,
 //   viewHeight = $( window ).height(),
@@ -260,11 +260,12 @@ $( window ).resize(function() {
 //   if (viewWidth < viewHeight) {
 //     bgSize = 'cover';
 //   } else {
-//     bgSize = viewWidth + 'px, auto';
+//     bgSize = 'cover';
 //   }
 //   $('body').css({
 //     'background-size' : bgSize
 //   });
+//   console.log(bgSize);
   positionShades(function(status) {});
 });
 
