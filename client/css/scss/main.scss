@@ -306,6 +306,11 @@ input, textarea {
 .blog__article {
   width: 75%;
   padding-right: 10px;
+  footer {
+    img {
+      width: auto;
+    }
+  }
 }
 
 .contact__content__form__required {
