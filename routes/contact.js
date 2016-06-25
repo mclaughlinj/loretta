@@ -36,6 +36,9 @@ router.post('/', function(req, res, next) {
   var db = req.app.locals.db;
   findMailUsers(db, function() {
 
+    console.log(mailUser);
+    console.log(mailPass);
+
     // create reusable transporter object using the default SMTP transport
     var transporter = nodemailer.createTransport(sendmailTransport({
       path: '/usr/sbin/sendmail'
