@@ -24,10 +24,12 @@ var findMailUsers = function(db, callback) {
   cursor.each(function(err, doc) {
     assert.equal(err, null);
     if (doc != null) {
-       mailPass = doc.password;
-       console.log(mailPass);
+      console.log('found pw');
+      mailPass = doc.password;
+      console.log(mailPass);
     } else {
-       callback();
+      console.log('failed');
+      callback();
     }
   });
 };
