@@ -252,7 +252,7 @@ input, textarea {
 }
 
 .home__mainContent__div {
-  margin: 80px 5%;
+  margin: 80px 5% 100px;
   position: relative;
   z-index: 799;
   display: none;
@@ -337,6 +337,7 @@ input, textarea {
   position: fixed;
   bottom: 5px;
   right: 5%;
+  margin-left: 5%;
   transform-origin: bottom;
   transition: transform 0.5s, bottom 0.1s;
 
@@ -390,7 +391,7 @@ input, textarea {
     display: block;
   }
   .home__mainContent__div {
-    margin: 80px 10%;
+    margin: 80px 10% 100px;
   }
   .gallery__image__div {
     width: 19vw;
@@ -434,5 +435,6 @@ input, textarea {
   }
   .modPsy__credit {
     right: 10%;
+    margin-left: 10%;
   }
 }
