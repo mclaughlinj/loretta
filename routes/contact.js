@@ -20,6 +20,7 @@ var mailUser = 'modpsy.mailer@gmail.com';
 var mailPass = '';
 
 var findMailUsers = function(db, callback) {
+  console.log(db);
   var cursor = db.collection('mailUsers').find( { "user": mailUser } );
   cursor.each(function(err, doc) {
     assert.equal(err, null);
