@@ -74,6 +74,7 @@ input, textarea {
     height: 100%;
   }
   .home__modal__div__close {
+    z-index: 899;
     display: none;
     font-size: 2.0em;
     position: fixed;
@@ -388,7 +389,7 @@ input, textarea {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   .blog__image__img {
     width: 50%;
     height: 50%;
@@ -402,6 +403,7 @@ input, textarea {
     width: 19vw;
     height: 19vw;
   }
+
   .home__header__div {
     aside {
       position: static;
@@ -441,5 +443,37 @@ input, textarea {
   .modPsy__credit {
     right: 10%;
     margin-left: 10%;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .home__modal__div {
+    &.gallery {
+      .home__modal__div__content {
+        .home__modal__div__gallery__img {
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin-left: auto;
+          margin-right: auto;
+          width: auto;
+          height: 90%;
+        }
+      }
+    }
+    h5 {
+      text-align: center;
+      margin: 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 35px;
+    }
+    .home__modal__div__gallery__share {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      right: 0;
+    }
   }
 }

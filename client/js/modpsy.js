@@ -294,7 +294,7 @@ function showShade(callBack) {
 
 function showGalleryImg(url, title, desc, callBack) {
   $('.home__modal__div__close').show();
-  $('.home__modal__div__content').html('<img src="' + url +'" alt="' + desc + '" title="' + title + '"><h5>' + title + '</h5><a data-pin-do="buttonPin" data-pin-count="beside" href="https://www.pinterest.com/pin/create/button/?url=http://www.lorettagarrison.co.uk/gallery&media=' + url + '&description=' + desc + '" target="_blank"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>').fadeIn();
+  $('.home__modal__div__content').html('<img src="' + url +'" alt="' + desc + '" title="' + title + '" class="home__modal__div__gallery__img"><h5>' + title + '</h5><div class="home__modal__div__gallery__share"><a data-pin-do="buttonPin" data-pin-count="beside" href="https://www.pinterest.com/pin/create/button/?url=http://www.lorettagarrison.co.uk/gallery&media=' + url + '&description=' + desc + '" target="_blank"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a></div>').fadeIn();
   $('.home__modal__div').addClass('gallery').fadeIn();
 //   $('.home__section__mainContent').addClass('noScroll');
   callBack('image shown');
