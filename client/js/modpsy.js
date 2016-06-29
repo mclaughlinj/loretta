@@ -43,6 +43,7 @@ $( document ).ready(function() {
             galArray.sort(
               function () { if (Math.random()<.5) return -1; else return 1; }
             );
+            galLength = galArray.length;
 
 
             var numberOfBgs = galLength,
@@ -83,12 +84,14 @@ $( document ).ready(function() {
               //                       }
                                     i++;
                                     j++;
-                                    if (j === galLength)  {
+                                    if (j == galLength)  {
                                       j = 0;
                                     }
-                                    if (i === galLength)  {
+                                    if (i == galLength)  {
                                       i = 0;
                                     }
+                                    console.log('i ' + i);
+                                    console.log('j ' + j);
                                   });
                                 }
                               });
