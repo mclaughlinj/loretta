@@ -250,7 +250,7 @@ $( window ).resize(function() {
 
 function endShades() {
   $('.home__modal__div').fadeOut();
-  $('.home__header__div, .home__mainContent__div').show();
+  $('.home__header__div, .home__mainContent__div, .modPsy__credit').show();
   $('body').css('cursor','auto');
   positionShades(function(status) {
     openShades(function(status) {

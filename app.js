@@ -10,6 +10,7 @@ var routes = require('./routes/index');
 var gallery = require('./routes/gallery');
 var blog = require('./routes/blog');
 var contact = require('./routes/contact');
+var upload = require('./routes/upload');
 
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
@@ -79,6 +80,7 @@ app.use('/', routes);
 app.use('/gallery', gallery);
 app.use('/blog', blog);
 app.use('/contact', contact);
+app.use('/upload', upload);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

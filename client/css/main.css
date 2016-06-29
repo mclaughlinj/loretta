@@ -80,6 +80,15 @@ input, textarea {
     height: auto;
     max-width: 100%;
     max-height: 100%; }
+  .home__modal__div .home__modal__div__content object {
+    height: 51px;
+    width: 60px;
+    pointer-events: none;
+    cursor: pointer; }
+  .home__modal__div .home__modal__div__content p {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: 0.7em; }
   .home__modal__div .home__modal__div__content h5 {
     text-align: center;
     margin: 0; }
@@ -114,7 +123,8 @@ input, textarea {
     vertical-align: top; }
     .home__header__div aside h1, .home__header__div header h1, .home__header__div p h1 {
       margin: 0;
-      padding-right: 10px; }
+      padding-right: 10px;
+      cursor: pointer; }
     .home__header__div aside .home__aside__nav, .home__header__div header .home__aside__nav, .home__header__div p .home__aside__nav {
       height: 100%; }
     .home__header__div aside .home__aside__nav__ul, .home__header__div header .home__aside__nav__ul, .home__header__div p .home__aside__nav__ul {
@@ -294,6 +304,7 @@ input, textarea {
   border-radius: 2px; }
 
 .modPsy__credit {
+  display: none;
   position: fixed;
   bottom: 5px;
   right: 5%;

@@ -19,7 +19,8 @@
     "mongodb": "~2.1.14",
     "nodemailer": "~2.3.0",
     "nodemailer-sendmail-transport": "~1.0.0",
-    "nodemailer-smtp-transport": "~2.4.1"
+    "nodemailer-smtp-transport": "~2.4.1",
+    "lwip": "~0.0.9"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
